@@ -1,0 +1,50 @@
+educore-lms/               # Root folder (Git repo root)
+│
+├── backend/               # Django + DRF backend
+│   ├── educore/           # Main Django project (settings, urls, wsgi/asgi)
+│   ├── apps/              # All custom Django apps live here
+│   │   ├── users/         # Authentication, RBAC, profiles
+│   │   ├── courses/       # Courses, lessons, enrollments
+│   │   ├── payments/      # Stripe/Razorpay integration
+│   │   ├── notifications/ # Email, WebSocket, Celery tasks
+│   │   ├── tenants/       # Multi-tenant support
+│   │   └── ml/            # Recommendation engine APIs
+│   ├── static/            # Static files (collected in prod)
+│   ├── media/             # Uploaded media files (course PDFs, videos)
+│   ├── requirements/      # Separate requirements files
+│   │   ├── base.txt
+│   │   ├── dev.txt
+│   │   └── prod.txt
+│   ├── manage.py
+│   └── tests/             # Centralized pytest tests if not app-specific
+│
+├── frontend/              # React frontend
+│   ├── public/            # Static public assets
+│   ├── src/               # Source code
+│   │   ├── components/    # Reusable UI components
+│   │   ├── pages/         # React Router pages (Dashboard, Courses, etc.)
+│   │   ├── hooks/         # Custom React hooks
+│   │   ├── services/      # API calls (fetch/axios to backend)
+│   │   ├── context/       # Global state (Auth, Theme)
+│   │   ├── styles/        # Tailwind config, CSS modules
+│   │   └── utils/         # Helpers
+│   └── package.json
+│
+├── deployment/            # Deployment-related configs
+│   ├── docker/            # Dockerfiles, docker-compose
+│   ├── nginx/             # Nginx configs
+│   ├── k8s/               # Kubernetes manifests
+│   └── scripts/           # Bash/Python helper scripts (DB migrations, etc.)
+│
+├── docs/                  # Documentation (for you + contributors)
+│   ├── architecture.md
+│   ├── api-design.md
+│   ├── database-schema.md
+│   └── roadmap.md
+│
+├── tests/                 # Centralized tests (integration/e2e later)
+│
+├── .env.example           # Example environment variables
+├── .gitignore
+├── README.md              # Always updated as project evolves
+└── LICENSE                # Optional, if you want open-source

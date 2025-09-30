@@ -1,0 +1,89 @@
+🚀 What We’re Building: EduCore-LMS
+
+Think of EduCore-LMS as a Learning Management System (LMS) for organizations, universities, and individuals.
+It’s like a mix of Coursera + Google Classroom + Udemy, but with:
+
+Core Features (MVP):
+
+Authentication (login, register, JWT/SSO/OAuth).
+
+Role-Based Access Control (Student, Instructor, Admin).
+
+Multi-tenant support (different organizations can use same platform).
+
+Course management (create, enroll, track progress).
+
+Payments (Stripe/Razorpay).
+
+Notifications (email, SMS, in-app).
+
+Extensions (Future):
+
+ML-powered recommendations.
+
+Mobile app powered by same API.
+
+Redis + Celery (for async tasks).
+
+Kubernetes deployment & autoscaling.
+
+🏗 How This Maps to Folder Structure
+
+When we think real-world dev, the structure isn’t arbitrary. It’s about separating concerns:
+
+Backend (Django / Microservices-ready)
+
+config/ → main Django project settings (think "engine room").
+
+apps/ → each domain is its own app:
+
+users/ → auth, profiles, RBAC.
+
+courses/ → course CRUD, lessons, progress.
+
+payments/ → Stripe/Razorpay integration.
+
+notifications/ → email, SMS, push.
+
+tenants/ → organization multi-tenancy.
+
+ml/ → recommendation models.
+
+requirements/ → base.txt, dev.txt, prod.txt (different dependencies).
+
+tests/ → integration & unit tests (separate from apps).
+
+static/ and media/ → static assets & user uploads.
+
+👉 Why this way?
+Because each app maps to a business domain. This keeps code modular and makes it possible to split into microservices later.
+
+Frontend (React + Vite)
+
+src/ → all source code.
+
+components/ → reusable UI pieces.
+
+pages/ → views like /login, /courses, /dashboard.
+
+features/ → domain-specific logic (auth, courses, payments).
+
+store/ → Redux store.
+
+services/ → API calls (fetch, axios).
+
+styles/ → Tailwind & global styles.
+
+👉 Why this way?
+Because React apps scale fast, and keeping features/ separate avoids spaghetti.
+
+Docs & Infra
+
+docs/ → architecture diagrams, API docs, design notes.
+
+docker/ → Dockerfiles, compose files for local dev.
+
+k8s/ → manifests for Kubernetes deployment.
+
+👉 Why?
+Because a real project isn’t just code — it’s deployable + understandable.

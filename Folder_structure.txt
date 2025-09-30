@@ -1,7 +1,7 @@
 educore-lms/               # Root folder (Git repo root)
 │
 ├── backend/               # Django + DRF backend
-│   ├── educore/           # Main Django project (settings, urls, wsgi/asgi)
+│   ├── config/           # Main Django project (settings, urls, wsgi/asgi)
 │   ├── apps/              # All custom Django apps live here
 │   │   ├── users/         # Authentication, RBAC, profiles
 │   │   ├── courses/       # Courses, lessons, enrollments

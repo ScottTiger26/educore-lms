@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to ZanFinTech LMS</title>
+  <link rel="stylesheet" href="{{ css_url }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Welcome, {{ user.get_full_name|default:user.username }}!</h2>
+    </div>
+    <p>Thank you for registering at ZanFinTech LMS. We're excited to have you on board.</p>
+    <p>Get started by logging into your account and exploring our platform.</p>
+    <p style="text-align: center;">
+      <a href="http://127.0.0.1:8000/login" class="btn">Login Now</a>
+    </p>
+    <div class="footer">
+      &copy; 2025 ZanFinTech LMS. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
